@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>git-a-pet</title>
+  </head>
+  <body>
+    <div style="text-align: center">
+      <img class = "top-logo" src="logo-shadow.png" height=150 width=150>
+      <span class="top-title">git-a-pet</span>
+    </div>
+    <div class="content">
+      <div id="app"></div><!-- Pages injected here -->
+    </div>
+    <br>
+    <br>
+  </body>
+  <footer>
+    <div id="cr-info">
+      <p>©2020 Team GitGood</p>
+      <button onclick="topFunction()" id="toTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i> Back To Top</button>
+    </div>
+  </footer>
+</html>
+
+<script src="https://kit.fontawesome.com/3e2ee17e21.js" crossorigin="anonymous"></script>
+
+<script>
+    // get button
+    mybutton = document.getElementById("toTopBtn");
+
+    // button shows when user scrolls down 20px from the top
+    window.onscroll = function () 
+    { 
+      scrollToTop() 
+    };
+
+    // function to make button appear after scrolling
+    function scrollToTop() 
+    {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) 
+      {
+        mybutton.style.display = "block";
+      } 
+      else 
+      {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // scroll to the top of the document when button is clicked
+    function topFunction() 
+    {
+      document.documentElement.scrollTop = 0;
+    }
+
+  //gets locations. Needs permision from user to work.
+	function getGeodata()
+	{
+    var pos;
+    if(navigator.geolocation) {
+      try 
+      {
+        navigator.geolocation.getCurrentPosition(showPos);
+      } catch (err) {
+        console.log(err);
+      }
+    } else { 
+    }
+	}
+
+  function showPos(position) {
+    //do something with the position
+  }
+
+  //grabs geodata on load
+  window.onload = getGeodata();
+
+</script>
+<script>
+    // get button
+    mybutton = document.getElementById("toTopBtn");
+
+    // button shows when user scrolls down 20px from the top
+    window.onscroll = function () {
+      scrollToTop()
+    };
+
+    // function to make button appear after scrolling
+    function scrollToTop() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      }
+      else {
+        mybutton.style.display = "none";
+      }
+    }
+    // scroll to the top of the document when button is clicked
+    function topFunction() {
+      // smooth animation for scrolling
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+</script>
